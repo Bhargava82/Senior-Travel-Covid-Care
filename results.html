@@ -54,16 +54,30 @@
         </ul>
       </div>
     </nav>
-    <label for="items">Search by Radius:</label>
+    <form action="/action_page.php">
+      <label for="miles">Search Mile Radius:</label>
+      
+      <select id="miles" name="miles">
+        <option value="mile-1">1 Mile</option>
+        <option value="mile-3">3 Miles</option>
+        <option value="mile-5">5 Miles</option>
+        <option value="mile-10">10 Miles</option>
+      </select>
+      <input type="submit" value="Submit">
+      </form>
 
-<!-- The value for `for=""` and `id=""` has to be same. -->
-
-<select id="items">
-  <option value="mile-1">1 Mile</option>
-  <option value="mile-3">3 Miles</option>
-  <option value="mile-5">5 Miles</option>
-  <option value="mile-10">10 Miles</option>
-</select>
+      <form action="/action_page.php">
+        <label for="results">Limit Search Results:</label>
+        
+        <select id="results" name="results">
+          <option value="search-5">5</option>
+          <option value="search-10">10</option>
+          <option value="search-20">20</option>
+          <option value="search-50">50</option>
+        </select>
+        <input type="submit" value="Submit">
+        </form>
+              
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
