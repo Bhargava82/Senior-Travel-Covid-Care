@@ -54,29 +54,34 @@
         </ul>
       </div>
     </nav>
-    <form action="/action_page.php">
-      <label for="miles">Search Mile Radius:</label>
-      
-      <select id="miles" name="miles">
-        <option value="mile-1">1 Mile</option>
-        <option value="mile-3">3 Miles</option>
-        <option value="mile-5">5 Miles</option>
-        <option value="mile-10">10 Miles</option>
+    <div class="selCont">
+    
+    Search by Mile Radius:
+      <select id="select1">
+        <option value=" " selected="selected">- Select -</option>
+        <option value="1">1 Mile</option>
+        <option value="2">3 Miles</option>
+        <option value="3">5 Miles</option>
+        <option value="4">10 Miles</option>
       </select>
-      <input type="submit" value="Submit">
-      </form>
-
-      <form action="/action_page.php">
-        <label for="results">Limit Search Results:</label>
-        
-        <select id="results" name="results">
-          <option value="search-5">5</option>
-          <option value="search-10">10</option>
-          <option value="search-20">20</option>
-          <option value="search-50">50</option>
+      
+      <br>
+    
+    Limit Search Results:
+      <select id="select2">
+        <option value=" " selected="selected">- Select -</option>
+        <option value="1">5 Results</option>
+        <option value="2">10 Results</option>
+        <option value="3">15 Results</option>
+        <option value="4">20 Results</option>
         </select>
-        <input type="submit" value="Submit">
-        </form>
+
+      <br>
+    
+      <button class="go-btn" type="submit">Go</button>
+      
+    </div>
+    <div id="selected"></div>
               
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
