@@ -9,6 +9,15 @@
   margin-left: 10%;
 }
 
+<<<<<<< HEAD
 .card {
   margin: 20px;
 }
+=======
+.selCont {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(235, 240, 194);
+}
+>>>>>>> e413f1b1d87e0f82c885c6fb33a4e1a0b1bfc3a3
