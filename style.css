@@ -8,3 +8,10 @@
   margin: 5%;
   margin-left: 10%;
 }
+
+.selCont {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(235, 240, 194);
+}
