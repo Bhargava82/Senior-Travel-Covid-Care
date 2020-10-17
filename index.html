@@ -20,7 +20,9 @@
         <p>An app designed to help senior citizens whom are traveling in the US find a local Medicare provider.</p>
     </div>
     <div class="input-fields">
-        <form action="/action_page.php">
+        <form action="/results.html">
+            <label for="city-name">City name:</label><br>
+            <input type="text" id="city-name" name="city-name"><br><br>
             <label for="zip-code">Zip Code:</label><br>
             <input type="number" id="zip-code" name="zip-code"><br><br>
             <label for="provider-type">Provider Type (specialization):</label><br>
@@ -39,7 +41,7 @@
             <label for="moderate">Moderate</label><br>
             <input type="radio" id="severe" name="risk" value="severe">
             <label for="severe">Severe</label><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submitBtn">
             <input type="reset">
         </form>
     </div>

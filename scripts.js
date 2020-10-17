@@ -1,8 +1,20 @@
 console.log("JS is working!");
 
 
+function submitForm() {
+    var cityInput = $("#city-input").val();
+    location.href = "results.html";
+    console.log(cityInput);
+    alert (cityInput);
+    searchCity(cityInput);
+}
 
-
+$("#submitBtn").on("click", function (event) {
+	event.preventDefault();
+	var cityName = $("#city-name").val();
+	console.log(cityName);
+	window.location.href = "./results.html";
+})
 
 
 
@@ -82,21 +94,22 @@ const settingsR = {
 	}
 };
 
-$.ajax(settingsR).done(function (responseR) {
-	console.log(responseR);
-	console.log("County: " + responseR.data[0].region.cities[0].name);
-	console.log("new cases = " + responseR.data[0].region.cities[0].confirmed_diff);
-	console.log("County latitude = " + responseR.data[0].region.cities[0].lat);
-	console.log("County longitude = " + responseR.data[0].region.cities[0].long);
-	var newCases = responseR.data[0].region.cities[0].confirmed_diff;
-	var riskLevel = "high"
+// $.ajax(settingsR).done(function (responseR) {
+// 	console.log(responseR);
+// 	console.log("County: " + responseR.data[0].region.cities[0].name);
+// 	console.log("new cases = " + responseR.data[0].region.cities[0].confirmed_diff);
+// 	console.log("County latitude = " + responseR.data[0].region.cities[0].lat);
+// 	console.log("County longitude = " + responseR.data[0].region.cities[0].long);
+// 	var newCases = responseR.data[0].region.cities[0].confirmed_diff;
+// 	var riskLevel = "high"
 
-	//COVID RISK LEVEL DETERMINATION
-	// For new case count at a location: < 250 = level 1 (low), 251 to 500 = level 2 (moderate), >501 = level 3 (high) > lat: "33.94243204" long: "-84.5761255"
-	if (newCases < 250) {
-		var riskLevel = "low";	
-	} else if (newCases >=251 && newCases <=500) {
-		var riskLevel = "moderate";
-	}
+// 	//COVID RISK LEVEL DETERMINATION
+// 	// For new case count at a location: < 250 = level 1 (low), 251 to 500 = level 2 (moderate), >501 = level 3 (high) > lat: "33.94243204" long: "-84.5761255"
+// 	if (newCases < 250) {
+// 		var riskLevel = "low";	
+// 	} else if (newCases >=251 && newCases <=500) {
+// 		var riskLevel = "moderate";
+// 	}
 	
-	console.log("Covid risk level for county: " + riskLevel);
+// 	console.log("Covid risk level for county: " + riskLevel);
+// });
