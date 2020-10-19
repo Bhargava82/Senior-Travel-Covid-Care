@@ -66,71 +66,6 @@ $("#whatsThis").on("click", function () {
 searchCity();
 console.log("loaded");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //COVID reports
 const settingsR = {
 	"async": true,
@@ -167,11 +102,12 @@ $.ajax(settingsR).done(function (responseR) {
 		var cardDiv = $("<div>").addClass("card bg-light mb-3");
 		cardDiv.attr("style", "max-width: 18rem");
 		var physicianName = $("<h5>").text("Dr. Michael Johnson");
+		var physicianType = $("<span>").text("Type of medicine practiced");
 		var physicianAddress = $("<span>").text("555 1st Street");
 		var physicianPhoneNumber = $("<span>").text("555-555-5555");
 		var physicianDirectionsLink = $("<span>").text("click here for directions").attr("src", "http://maps.google.com");
 		var covidRisk = $("<span>").text("COVID Risk: low");
-		cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, physicianDirectionsLink, covidRisk)
+		cardDiv.append(physicianName, physicianType, physicianAddress, physicianPhoneNumber, physicianDirectionsLink, covidRisk)
 		resultsDiv.append(cardDiv);
 	}
 
