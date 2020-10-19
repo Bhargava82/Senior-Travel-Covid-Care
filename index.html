@@ -25,28 +25,40 @@
             <input type="text" id="city-name" name="city-name"><br><br>
             <label for="zip-code">Zip Code:</label><br>
             <input type="number" id="zip-code" name="zip-code"><br><br>
-            <label for="provider-type">Provider Type (specialization):</label><br>
-            <input type="text" id="provider-type" name="prover-type" value="General Practitioner"><br><br>
+            <!-- <label for="provider-type">Provider Type (specialization):</label><br>
+            <input type="text" id="provider-type" name="provider-type" value="General Practitioner"><br><br> -->
+            <p><strong>Provider Type:</strong></p>
+            <select id="provider-type">
+                <option value=" " selected="selected">- Select -</option>
+                <option vale="Any">Any</option>
+                <option value="Internal Medicine">Internal Medicine</option>
+                <option value="Nurse Practitioner">Nurse Practitioner</option>
+                <option value="Physician Assistant">Physician Assistant</option>
+                <option value="Family Medicine">Family Medicine</option>
+                <option value="Specialist">Specialist</option>
+            </select><br><br>
             <p><strong>Physician preferred gender:</strong></p>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label><br><br>
-            <p><strong>Minimum Covid-19 risk level for office location:</strong></p>
-            <input type="radio" id="low" name="risk" value="low">
-            <label for="low">Low</label><br>
-            <input type="radio" id="moderate" name="risk" value="moderate">
-            <label for="moderate">Moderate</label><br>
-            <input type="radio" id="severe" name="risk" value="severe">
-            <label for="severe">Severe</label><br><br>
+            <select id="gender-type">
+                <option value=" " selected="selected" required>- Select -</option>
+                <option vale="No Preference">No Preference</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+            <p><strong>Minimum Acceptable Covid-19 Risk Level for Office Location:</strong></p>
+            <select id="covid-risk">
+                <option value=" " selected="selected">- Select -</option>
+                <option vale="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Severe">Severe</option>
+            </select><br><br>
             <input type="submit" value="Submit" id="submitBtn">
             <input type="reset">
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <script src="./scripts.js"></script>
 </body>
 
