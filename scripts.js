@@ -57,6 +57,11 @@ $(".go-btn").on("click", function (event) {
 	console.log(selectTwo);
 });
 
+$("#whatsThis").on("click", function () {
+	console.log("What's this clicked!");
+	window.open("https://www.cdc.gov/coronavirus/2019-ncov/travelers/how-level-is-determined.html");
+})
+
 
 searchCity();
 console.log("loaded");
