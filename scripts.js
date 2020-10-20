@@ -34,15 +34,15 @@ $("#submitBtn").on("click", function (event) {
 	event.preventDefault();
 	cityInput = $("#city-name").val();
 	localStorage.setItem("city", cityInput);
-	zipInput = $("#zip-code").val();
-	localStorage.setItem("zipCode", zipInput);
+	stateInput = $("#state-name").val();
+	localStorage.setItem("state", stateInput);
 	providerInput = $("#provider-type").val();
 	localStorage.setItem("providerType", providerInput);
 	genderInput = $("#gender-type").val();
 	localStorage.setItem("gender", genderInput);
 	riskInput = $("#covid-risk").val();
 	localStorage.setItem("covidRisk", riskInput);
-	if (cityInput === "" || zipInput === "" || providerInput === "" || genderInput === "" || riskInput === "") {
+	if (cityInput === "" || stateInput === "" || providerInput === "" || genderInput === "" || riskInput === "") {
 		alert("Please complete all fields and selections.")
 		return;
 	}
