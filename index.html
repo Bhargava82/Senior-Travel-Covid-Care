@@ -23,8 +23,6 @@
         <form>
             <label for="city-name"><strong>City name:</strong></label><br>
             <input type="text" id="city-name" name="city-name"><br><br>
-            <label for="provider-type">Provider Type (specialization):</label><br>
-            <input type="text" id="provider-type" name="prover-type" value="General Practitioner"><br><br>
             <p><strong>Select current state:</strong></p>
             <select name="state" id="state-name">
                 <option value="" selected="selected">Select a state</option>
@@ -97,7 +95,7 @@
                 <option value="M">Male</option>
                 <option value="F">Female</option>
             </select><br><br>
-            <p><strong>Minimum acceptable Covid-19 risk level for office location  </strong><button id="whatsThis">What's this?</button>  :</p>
+            <p><strong>Minimum acceptable Covid-19 risk level for office location:</strong></p>
             <select id="covid-risk">
                 <option value=" " selected="selected">- Select -</option>
                 <option value="Low">Low</option>
@@ -107,6 +105,8 @@
             <input type="submit" value="Submit" id="submitBtn">
             <input type="reset">
         </form>
+        <br>
+        <button id="whatsThis">How do we define Covid-19 risk level?</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
