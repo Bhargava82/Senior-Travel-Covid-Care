@@ -4,14 +4,14 @@ var stateInput;
 var stateCode;
 const TO_NAME = 1;
 const TO_ABBREVIATED = 2;
-
-
+var selectOne;
+var defaultSearch = 5;
 function searchCity() {
 	var stateStorage = localStorage.getItem("state");
 	console.log(stateStorage);
 	stateInput = localStorage.getItem("state");
 	console.log(stateInput);
-
+	selectOne = localStorage.getItem("limit")
 	function convertRegion(input, to) {
 		var states = [
 			['Alabama', 'AL'],
@@ -94,7 +94,7 @@ function searchCity() {
 					return (region[0]);
 				}
 			}
-			
+
 		}
 	}
 	// if (stateInput.toLocaleUpperCase() == states[1]){
@@ -105,7 +105,7 @@ function searchCity() {
 	stateCode = convertRegion(stateInput, TO_ABBREVIATED);
 	console.log("JS is working!");
 	console.log(stateCode);
-	
+
 	// }
 
 	console.log(stateCode);
@@ -145,48 +145,83 @@ function searchCity() {
 				method: "GET"
 			}).then(function (responseRegistry) {
 				console.log(responseRegistry);
+				if (typeof selectOne == 'undefined') {
+					for (var i = 0; i < defaultSearch; i++) {
 
-				for (var i = 0; i < 10; i++) {
 
 
+						if (responseRegistry.result_count == 0) {
+							var resultsDiv = $(".results-div")
+							var cardDiv = $("<div>").addClass("card bg-light mb-3");
+							cardDiv.attr("style", "max-width: 18rem");
+							var physicianName = $("<h5>").text("No results found, try again");
+							cardDiv.append(physicianName)
+							resultsDiv.append(cardDiv);
+							i = 10;
+						}
+						else if (typeof responseRegistry.results[i].basic.last_name == 'undefined') {
+							console.log("undefined")
+							defaultSearch++;
+						}
+						else {
+							var resultsDiv = $(".results-div")
+							var cardDiv = $("<div>").addClass("card bg-light mb-3");
+							cardDiv.attr("style", "max-width: 18rem");
+							var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
+							var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
+							var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
 
-					if (responseRegistry.result_count == 0) {
-						var resultsDiv = $(".results-div")
-						var cardDiv = $("<div>").addClass("card bg-light mb-3");
-						cardDiv.attr("style", "max-width: 18rem");
-						var physicianName = $("<h5>").text("No results found, try again");
-						cardDiv.append(physicianName)
-						resultsDiv.append(cardDiv);
-						i = 10;
+							var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
+							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
+							resultsDiv.append(cardDiv);
+
+						}
 					}
-					else if (typeof responseRegistry.results[i].basic.last_name == 'undefined') {
-						console.log("undefined")
-						
+				}
+				else {
+					for (var i = 0; i < selectOne; i++) {
+
+
+
+						if (responseRegistry.result_count == 0) {
+							var resultsDiv = $(".results-div")
+							var cardDiv = $("<div>").addClass("card bg-light mb-3");
+							cardDiv.attr("style", "max-width: 18rem");
+							var physicianName = $("<h5>").text("No results found, try again");
+							cardDiv.append(physicianName)
+							resultsDiv.append(cardDiv);
+							i = 10;
+						}
+						else if (typeof responseRegistry.results[i].basic.last_name == 'undefined') {
+							console.log("undefined")
+							selectOne++;
+						}
+						else {
+							var resultsDiv = $(".results-div")
+							var cardDiv = $("<div>").addClass("card bg-light mb-3");
+							cardDiv.attr("style", "max-width: 18rem");
+							var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
+							var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
+							var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
+
+							var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
+							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
+							resultsDiv.append(cardDiv);
+
+						}
+
 					}
-					else {
-						var resultsDiv = $(".results-div")
-						var cardDiv = $("<div>").addClass("card bg-light mb-3");
-						cardDiv.attr("style", "max-width: 18rem");
-						var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
-						var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
-						var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
-
-						var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
-						cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
-						resultsDiv.append(cardDiv);
-
-					}
-
 				}
 			});
+
 		}
 		catch (error) {
 			console.log(error);
 		}
 
 	})
-
 }
+
 
 
 
@@ -217,10 +252,20 @@ $("#submitBtn").on("click", function (event) {
 });
 $(".go-btn").on("click", function (event) {
 	event.preventDefault();
-	var selectOne = $("#select1").val();
+	selectOne = $("#select1").val();
+	localStorage.setItem("limit", selectOne);
 	console.log(selectOne);
-	var selectTwo = $("#select2").val();
-	console.log(selectTwo);
+	// var selectTwo = $("#select2").val();
+	// console.log(selectTwo);
+	window.location.replace("./results.html");
+});
+$("#navbar-brand").on("click", function(event){
+	event.preventDefault();
+	selectOne = "";
+	cityInput="";
+	stateInput="";	
+	 stateCode="";
+	 window.location.replace("./index.html");
 });
 
 $("#whatsThis").on("click", function () {
