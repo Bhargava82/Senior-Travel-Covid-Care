@@ -99,8 +99,8 @@ $.ajax(settingsR).done(function (responseR) {
 
 	for (var i = 0; i < 5; i++) {
 		var resultsDiv = $(".results-div")
-		var cardDiv = $("<div>").addClass("card bg-light mb-3");
-		cardDiv.attr("style", "max-width: 18rem");
+		var cardDiv = $("<div>").addClass("card bg-light mg-3");
+		cardDiv.attr("style", "max-width: 22rem");
 		var physicianName = $("<h5>").text("Dr. Michael Johnson");
 		var physicianType = $("<span>").text("Type of medicine practiced");
 		var physicianAddress = $("<span>").text("555 1st Street");
