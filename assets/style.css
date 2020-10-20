@@ -3,7 +3,6 @@
   padding: 10px;
   background-color: #0000cd;
   color: lightgrey;
-  font-family: "Piazzolla", serif;
 }
 
 .input-fields {
@@ -17,7 +16,6 @@
   margin: 20px;
   background-color: #0000cd;
   color: lightgrey;
-  font-family: "Piazzolla", serif;
 }
 
 .card {
@@ -25,7 +23,12 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  text-align: center;
+}
+
+.saveBtn {
+  border-radius: 8%;
+  background-color: rgb(136, 119, 243);
+  color: white;
 }
 
 #whatsThis {
@@ -51,4 +54,8 @@ span {
 
 h5 {
   font-family: "Piazzolla", serif;
+}
+
+.results-div {
+  align-items: center;
 }
