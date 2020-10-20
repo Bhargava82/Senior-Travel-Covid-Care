@@ -1,0 +1,45 @@
+.header {
+  text-align: center;
+  padding: 10px;
+  background-color: #0000cd;
+  color: lightgrey;
+}
+
+.input-fields {
+  margin: 5%;
+  margin-left: 10%;
+}
+
+.selCont {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: #0000cd;
+  color: lightgrey;
+}
+
+.card {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#whatsThis {
+  border-radius: 15%;
+  background-color: yellow;
+}
+
+.navbar-expand-lg {
+  background-color: #00008b;
+  color: black;
+}
+
+body {
+  background-image: url("assets/medical-image.jpeg");
+  background-size: 50%;
+}
+
+.results-div {
+  align-items: center;
+}
