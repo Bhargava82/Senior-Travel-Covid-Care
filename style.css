@@ -20,6 +20,10 @@
 
 .card {
   margin: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 #whatsThis {
@@ -35,4 +39,8 @@
 body {
   background-image: url("assets/medical-image.jpeg");
   background-size: 50%;
+}
+
+.results-div {
+  align-items: center;
 }
