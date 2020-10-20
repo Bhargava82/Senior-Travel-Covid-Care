@@ -186,40 +186,9 @@ function searchCity() {
 
 	})
 
+}
 
 
-console.log("JS is working!");
-
-// JS variables
-var cityInput;
-
-function searchCity() {
-	try {
-		var cityStorage = localStorage.getItem("city");
-		var registryURL = "https://cors-anywhere.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?version=2.1&address_purpose=primary&city=+ &address_purpose=primary&city=" + cityStorage;
-		$.ajax({
-			url: registryURL,
-			method: "GET"
-		}).then(function (responseRegistry) {
-			console.log(responseRegistry);
-			for (var i = 0; i < 10; i++) {
-
-				//gender check
-				if (responseRegistry.results[i].basic.gender === "F") {
-					console.log("Name: " + responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
-					console.log("Gender: " + responseRegistry.results[i].basic.gender);
-					console.log("Address: " + responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
-					console.log("Telephone: " + responseRegistry.results[i].addresses[0].telephone_number);
-					console.log("Postal Code: " + responseRegistry.results[i].addresses[0].postal_code);
-				}
-			}
-		});
-	}
-	catch (error) {
-		console.log(error);
-	}
-
-};
 
 $("#submitBtn").on("click", function (event) {
 	event.preventDefault();
@@ -230,72 +199,6 @@ $("#submitBtn").on("click", function (event) {
 	localStorage.setItem("city", cityInput);
 	console.log(cityInput);
 	window.location.replace("./results.html");
-
-});
-
-searchCity();
-console.log("loaded");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	cityInput = $("#city-name").val();
 	localStorage.setItem("city", cityInput);
 	stateInput = $("#state-name").val();
@@ -312,7 +215,6 @@ console.log("loaded");
 	}
 	window.location.replace("./results.html");
 });
-
 $(".go-btn").on("click", function (event) {
 	event.preventDefault();
 	var selectOne = $("#select1").val();
@@ -324,9 +226,8 @@ $(".go-btn").on("click", function (event) {
 $("#whatsThis").on("click", function () {
 	console.log("What's this clicked!");
 	window.open("https://www.cdc.gov/coronavirus/2019-ncov/travelers/how-level-is-determined.html");
-})
+});
 
 
 searchCity();
 console.log("loaded");
-
