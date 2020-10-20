@@ -94,7 +94,7 @@ function searchCity() {
 					return (region[0]);
 				}
 			}
-			
+
 		}
 	}
 	// if (stateInput.toLocaleUpperCase() == states[1]){
@@ -105,7 +105,7 @@ function searchCity() {
 	stateCode = convertRegion(stateInput, TO_ABBREVIATED);
 	console.log("JS is working!");
 	console.log(stateCode);
-	
+
 	// }
 
 	console.log(stateCode);
@@ -161,7 +161,7 @@ function searchCity() {
 					}
 					else if (typeof responseRegistry.results[i].basic.last_name == 'undefined') {
 						console.log("undefined")
-						
+
 					}
 					else {
 						var resultsDiv = $(".results-div")
