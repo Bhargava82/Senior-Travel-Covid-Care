@@ -1,7 +1,8 @@
 .header {
   text-align: center;
   padding: 10px;
-  background-color: bisque;
+  background-color: #0000cd;
+  color: lightgrey;
 }
 
 .input-fields {
@@ -13,9 +14,25 @@
   text-align: center;
   padding: 20px;
   margin: 20px;
-  background-color: rgb(235, 240, 194);
+  background-color: #0000cd;
+  color: lightgrey;
 }
 
 .card {
   margin: 20px;
+}
+
+#whatsThis {
+  border-radius: 15%;
+  background-color: yellow;
+}
+
+.navbar-expand-lg {
+  background-color: #00008b;
+  color: black;
+}
+
+body {
+  background-image: url("assets/medical-image.jpeg");
+  background-size: 50%;
 }
