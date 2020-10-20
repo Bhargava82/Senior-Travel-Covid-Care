@@ -3,6 +3,7 @@
   padding: 10px;
   background-color: #0000cd;
   color: lightgrey;
+  font-family: "Piazzolla", serif;
 }
 
 .input-fields {
@@ -16,6 +17,7 @@
   margin: 20px;
   background-color: #0000cd;
   color: lightgrey;
+  font-family: "Piazzolla", serif;
 }
 
 .card {
@@ -34,9 +36,19 @@
 .navbar-expand-lg {
   background-color: #00008b;
   color: black;
+  font-family: "Piazzolla", serif;
 }
 
 body {
   background-size: 100%;
   background-image: url("./medical-image.jpeg");
+}
+
+span {
+  padding: 3px;
+  font-family: "Piazzolla", serif;
+}
+
+h5 {
+  font-family: "Piazzolla", serif;
 }
