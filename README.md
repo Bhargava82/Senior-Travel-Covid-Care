@@ -20,4 +20,4 @@ APIs used:
 Deployed application:
 
 1.  Finished product: url("")
-2.  Deployed application link:
+2.  Deployed application link: (https://bhargava82.github.io/project-1/)
