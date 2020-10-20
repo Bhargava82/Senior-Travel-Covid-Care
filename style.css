@@ -26,6 +26,12 @@
   width: 100%;
 }
 
+.saveBtn {
+border-radius: 8%;
+background-color: rgb(136, 119, 243);
+color: white;
+}
+
 #whatsThis {
   border-radius: 15%;
   background-color: yellow;

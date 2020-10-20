@@ -176,6 +176,7 @@ function searchCity() {
 							resultsDiv.append(cardDiv);
 
 						}
+
 					}
 				}
 				else {
@@ -203,14 +204,65 @@ function searchCity() {
 							var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
 							var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
 							var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
+							var address = responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state;
+							localStorage.setItem("button" + i, address);
 
 							var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
 							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
 							resultsDiv.append(cardDiv);
 
-						}
+							var mapEl = $("<button>");
+							mapEl.attr("class", "saveBtn");
 
+							mapEl.text("Show Map");
+							mapEl.attr("id", "button" + [i]);
+							cardDiv.append(mapEl);
+
+
+						}
+					
 					}
+					$("#button0").on("click", function () {
+						var link0 = localStorage.getItem("button0");
+						console.log("click");
+						console.log(link0);
+						window.open("https://www.google.com/maps/place/" + link0);
+					});
+
+					$("#button1").on("click", function () {
+						var link1 = localStorage.getItem("button1");
+						console.log("click");
+						console.log(link1);
+						window.open("https://www.google.com/maps/place/" + link1);
+					});
+
+					$("#button2").on("click", function () {
+						var link2 = localStorage.getItem("button2");
+						console.log("click");
+						console.log(link2);
+						window.open("https://www.google.com/maps/place/" + link2);
+					});
+
+					$("#button3").on("click", function () {
+						var link3 = localStorage.getItem("button3");
+						console.log("click");
+						console.log(link3);
+						window.open("https://www.google.com/maps/place/" + link3);
+					});
+
+					$("#button4").on("click", function () {
+						var link4 = localStorage.getItem("button4");
+						console.log("click");
+						console.log(link4);
+						window.open("https://www.google.com/maps/place/" + link4);
+					});
+
+					$("#button5").on("click", function () {
+						var link5 = localStorage.getItem("button4");
+						console.log("click");
+						console.log(link5);
+						window.open("https://www.google.com/maps/place/" + link5);
+					});
 				}
 			});
 
@@ -221,8 +273,6 @@ function searchCity() {
 
 	})
 }
-
-
 
 
 $("#submitBtn").on("click", function (event) {
@@ -250,6 +300,8 @@ $("#submitBtn").on("click", function (event) {
 	}
 	window.location.replace("./results.html");
 });
+
+//event listeners
 $(".go-btn").on("click", function (event) {
 	event.preventDefault();
 	selectOne = $("#select1").val();
@@ -259,19 +311,19 @@ $(".go-btn").on("click", function (event) {
 	// console.log(selectTwo);
 	window.location.replace("./results.html");
 });
-$("#navbar-brand").on("click", function(event){
+
+$("#navbar-brand").on("click", function (event) {
 	event.preventDefault();
 	selectOne = "";
-	cityInput="";
-	stateInput="";	
-	 stateCode="";
-	 window.location.replace("./index.html");
+	cityInput = "";
+	stateInput = "";
+	stateCode = "";
+	window.location.replace("./index.html");
 });
 
 $("#whatsThis").on("click", function () {
 	console.log("What's this clicked!");
 	window.open("https://www.cdc.gov/coronavirus/2019-ncov/travelers/how-level-is-determined.html");
 });
-
 
 searchCity();
