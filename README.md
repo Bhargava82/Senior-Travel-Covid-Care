@@ -3,9 +3,9 @@
 Welcome to Senior Travel Covid Care Application!
 The state of today's public health environment was the inspiration for our application of Senior Travel Covid Care. Our application's target demographic is senior citizens who are traveling (e.g. snowbirds, visiting children out-of-state) and may have been exposed or developed symptoms of COVID-19 and need to find a physician that accepts medicare. Users are able to search for their city and state, physician type, preferred physician gender, and acceptable Covid-risk level for their state. A goal of this application was to be as user-friendly as possible with our target user in mind.
 
-URL of deployed app: 
+URL of deployed app:
 
-![screenshotofmywebpage](./assets/senior-travel-covid-care-app-screenshot1.png)
+![screenshotofmywebpage](./assets/senior-travel-covid-care.png)
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,17 +14,17 @@ URL of deployed app:
 
 ## Installation
 
-Clone my Github repository to your local machine: https://github.com/Bhargava82/project-1
+Clone my Github repository to your local machine: https://bhargava82.github.io/Senior-Travel-Covid-Care/
 
 ## Usage
 
-1. Open webpage in browser: https://bhargava82.github.io/project-1/
+1. Open webpage in browser: https://bhargava82.github.io/Senior-Travel-Covid-Care/
 2. Provide the following inputs:
-    a. current city
-    b. state
-    c. physician type (specialization)
-    d. preferred gender of physician
-    e. acceptable risk level (low, medium, high)
+   a. current city
+   b. state
+   c. physician type (specialization)
+   d. preferred gender of physician
+   e. acceptable risk level (low, medium, high)
 3. Click the submit button and page will refresh to a result page listing containing physicians that meet your search criteria.
 4. If too many results return, you can limit the listing by using the drop down menu near the top of the page.
 5. Click 'New Search' in the Navbar to return to initial page and start over.
