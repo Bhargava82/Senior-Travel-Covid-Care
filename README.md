@@ -14,11 +14,11 @@ URL of deployed app:
 
 ## Installation
 
-Clone my Github repository to your local machine: https://github.com/Bhargava82/project-1
+Clone my Github repository to your local machine: https://github.com/Bhargava82/Senior-Travel-Covid-Care
 
 ## Usage
 
-1. Open webpage in browser: https://bhargava82.github.io/project-1/
+1. Open webpage in browser: https://bhargava82.github.io/Senior-Travel-Covid-Care/
 2. Provide the following inputs:
     a. current city
     b. state
