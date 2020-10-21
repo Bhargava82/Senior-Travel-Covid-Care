@@ -175,8 +175,54 @@ function searchCity() {
 							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, physicianGender, covidRisk)
 							resultsDiv.append(cardDiv);
 
-						}
+							var mapEl = $("<button>");
+							mapEl.attr("class", "saveBtn");
 
+							mapEl.text("Show Map");
+							mapEl.attr("id", "button" + [i]);
+							cardDiv.append(mapEl);
+						}
+						$("#button0").on("click", function () {
+							var link0 = localStorage.getItem("button0");
+							console.log("click");
+							console.log(link0);
+							window.open("https://www.google.com/maps/place/" + link0);
+						});
+
+						$("#button1").on("click", function () {
+							var link1 = localStorage.getItem("button1");
+							console.log("click");
+							console.log(link1);
+							window.open("https://www.google.com/maps/place/" + link1);
+						});
+
+						$("#button2").on("click", function () {
+							var link2 = localStorage.getItem("button2");
+							console.log("click");
+							console.log(link2);
+							window.open("https://www.google.com/maps/place/" + link2);
+						});
+
+						$("#button3").on("click", function () {
+							var link3 = localStorage.getItem("button3");
+							console.log("click");
+							console.log(link3);
+							window.open("https://www.google.com/maps/place/" + link3);
+						});
+
+						$("#button4").on("click", function () {
+							var link4 = localStorage.getItem("button4");
+							console.log("click");
+							console.log(link4);
+							window.open("https://www.google.com/maps/place/" + link4);
+						});
+
+						$("#button5").on("click", function () {
+							var link5 = localStorage.getItem("button4");
+							console.log("click");
+							console.log(link5);
+							window.open("https://www.google.com/maps/place/" + link5);
+						});
 					}
 				}
 				else {
