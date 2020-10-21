@@ -1,8 +1,8 @@
 var cityInput;
 var stateInput;
 var stateCode;
-const TO_NAME = 1;
-const TO_ABBREVIATED = 2;
+var TO_NAME = 1;
+var TO_ABBREVIATED = 2;
 var selectOne;
 var defaultSearch = 5;
 function searchCity() {
@@ -169,9 +169,10 @@ function searchCity() {
 							var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
 							var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
 							var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
-
+							var physicianGender = $("<span>").text("Gender: " + responseRegistry.results[i].basic.gender);
+							console.log(responseRegistry.results[i].basic.gender);
 							var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
-							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
+							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, physicianGender, covidRisk)
 							resultsDiv.append(cardDiv);
 
 						}
@@ -203,11 +204,13 @@ function searchCity() {
 							var physicianName = $("<h5>").text(responseRegistry.results[i].basic.last_name + ", " + responseRegistry.results[i].basic.first_name);
 							var physicianAddress = $("<span>").text(responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state);
 							var physicianPhoneNumber = $("<span>").text(responseRegistry.results[i].addresses[0].telephone_number);
+							var physicianGender = $("<span>").text("Gender: " + responseRegistry.results[i].basic.gender);
+							console.log(responseRegistry.results[i].basic.gender)
 							var address = responseRegistry.results[i].addresses[0].address_1 + " " + responseRegistry.results[i].addresses[0].address_2 + ", " + responseRegistry.results[i].addresses[0].city + ", " + responseRegistry.results[i].addresses[0].state;
 							localStorage.setItem("button" + i, address);
 
 							var covidRisk = $("<span>").text("COVID Risk for " + stateStorage + ": " + riskLevel);
-							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, covidRisk)
+							cardDiv.append(physicianName, physicianAddress, physicianPhoneNumber, physicianGender, covidRisk)
 							resultsDiv.append(cardDiv);
 
 							var mapEl = $("<button>");
