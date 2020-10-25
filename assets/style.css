@@ -25,6 +25,12 @@
   width: 100%;
 }
 
+.saveBtn {
+  border-radius: 8%;
+  background-color: rgb(136, 119, 243);
+  color: white;
+}
+
 #whatsThis {
   border-radius: 15%;
   background-color: yellow;
@@ -33,11 +39,21 @@
 .navbar-expand-lg {
   background-color: #00008b;
   color: black;
+  font-family: "Piazzolla", serif;
 }
 
 body {
-  background-image: url("assets/medical-image.jpeg");
-  background-size: 50%;
+  background-size: 100%;
+  background-image: url("./medical-image.jpeg");
+}
+
+span {
+  padding: 3px;
+  font-family: "Piazzolla", serif;
+}
+
+h5 {
+  font-family: "Piazzolla", serif;
 }
 
 .results-div {
