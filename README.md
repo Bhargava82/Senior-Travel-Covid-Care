@@ -1,9 +1,9 @@
 # project-1
 
-Welcome to Senior Travel Covid Care Application!
+Welcome to the Senior Travel Covid Care Application!
 The state of today's public health environment was the inspiration for our application of Senior Travel Covid Care. Our application's target demographic is senior citizens who are traveling (e.g. snowbirds, visiting children out-of-state) and may have been exposed or developed symptoms of COVID-19 and need to find a physician that accepts medicare. Users are able to search for their city and state, physician type, preferred physician gender, and acceptable Covid-risk level for their state. A goal of this application was to be as user-friendly as possible with our target user in mind.
 
-URL of deployed app: 
+URL of deployed app: https://bhargava82.github.io/project-1/
 
 ![screenshotofmywebpage](./assets/senior-travel-covid-care-app-screenshot1.png)
 
@@ -42,7 +42,7 @@ Google Maps dynamic URL usage: https://developers.google.com/maps/documentation
 
 MIT License
 
-Copyright (c) [2020] [Senior Travel Covid Care Team: Justin Sykes, Beth Presten, Bhargava Patel, Josepth Strickland]
+Copyright (c) [2020] [Senior Travel Covid Care Team: Justin Sykes, Beth Presten, Bhargava Patel, Joseph Strickland]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

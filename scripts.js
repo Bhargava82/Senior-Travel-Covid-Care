@@ -145,12 +145,12 @@ function searchCity() {
 				method: "GET"
 			}).then(function (responseRegistry) {
 				console.log(responseRegistry);
-				if (typeof selectOne == 'undefined') {
+				if (typeof selectOne === 'undefined') {
 					for (var i = 0; i < defaultSearch; i++) {
 
 
-
-						if (responseRegistry.result_count == 0) {
+						//check if result count is = 0 and handle it
+						if (responseRegistry.result_count = 0) {
 							var resultsDiv = $(".results-div")
 							var cardDiv = $("<div>").addClass("card bg-light mb-3");
 							cardDiv.attr("style", "max-width: 18rem");
@@ -159,10 +159,22 @@ function searchCity() {
 							resultsDiv.append(cardDiv);
 							i = 10;
 						}
-						else if (typeof responseRegistry.results[i].basic.last_name == 'undefined') {
+
+						//check for undefined name
+						else if (typeof responseRegistry.results[i].basic.last_name === 'undefined') {
 							console.log("undefined")
 							defaultSearch++;
 						}
+
+						//build the cards
+						
+						else if
+							(genderInput != responseRegistry.results[i].basic.gender || genderInput != "NP") {
+							console.log("gender does not match or = NA!");
+						}
+
+
+						
 						else {
 							var resultsDiv = $(".results-div")
 							var cardDiv = $("<div>").addClass("card bg-light mb-3");
@@ -220,7 +232,7 @@ function searchCity() {
 
 
 						}
-					
+
 					}
 					$("#button0").on("click", function () {
 						var link0 = localStorage.getItem("button0");
