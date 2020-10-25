@@ -109,7 +109,6 @@ function searchCity() {
 	// }
 
 	console.log(stateCode);
-	//Rapid API call for COVID-19 Statistics
 	const settingsR = {
 		"async": true,
 		"crossDomain": true,
